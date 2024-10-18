@@ -3,6 +3,7 @@ import { Former_Login } from './Login/login';
 import { Former_Register } from './Register/register';
 import { useState } from 'react';
 import { Home } from './home_page';
+import { DisplayProduct } from './Product_Upload/product';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   // const [form, setForm] = useState("register");
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />}>
           <Route path="/register" element={<Former_Register />} />
           <Route path="/login" element={<Former_Login />} />
+          <Route path="/product_upload" element={<DisplayProduct />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet,useLocation } from 'react-router-dom';
 import './App.css';
 import Navbar from './Navbar/navbar';
 import './home.css';
 import homeImage from './image/fr6.jpg';
 
 export const Home = () => {
+  const location = useLocation();
   const [linkClicked, setLinkClicked] = useState(false);
-
   const handleLinkClick = () => {
     setLinkClicked(true);
   };
@@ -39,20 +39,23 @@ export const Home = () => {
         ></script>
         <Navbar />
       </header>
-      <body className="home_page">
+      <body >
+      <div className="Full">
         <br />
-        {!linkClicked && (
+        {!linkClicked && location.pathname === '/' &&(
           <>
-            <Link to="/register" onClick={handleLinkClick}>
+          <div className="btn btn-info ml-5">            <Link to="/register" onClick={handleLinkClick}>
               Register Here
-            </Link>
-            <Link to="/login" onClick={handleLinkClick}>
+            </Link></div>
+
+           <div className="btn btn-info ml-3"><Link to="/login" onClick={handleLinkClick}>
               Login Here
-            </Link>
+            </Link></div> 
           </>
         )}
         <br />
         <Outlet />
+        </div>
       </body>
     </div>
   );

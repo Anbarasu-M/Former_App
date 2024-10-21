@@ -1,6 +1,7 @@
 import './login.css';
 import Login from './loginForm';
 import validate from '../Validator/login';
+import {  Link,Outlet } from 'react-router-dom';
 export const Former_Login = () => {
     const {formData,handleChange,handleClick,errors} = Login(validate);
     return <div>
@@ -25,7 +26,8 @@ export const Former_Login = () => {
             </div>
             {errors.InvalindCredentials && <p className="text-danger">{errors.InvalindCredentials}</p>}
             </div>
-            <br/>
+            <sapn>If you don't have account <Link to="/register"> Click Here</Link> to Register</sapn>
+                <Outlet />
         </form>
     </div>
 }

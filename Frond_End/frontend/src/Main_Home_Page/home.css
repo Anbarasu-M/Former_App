@@ -1,0 +1,25 @@
+.card-fixed-size {
+    width: 15rem; /* Reduced width */
+    height: 20rem; /* Reduced height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15px; /* Increased space between cards */
+  }
+  
+  .card-img-fixed-size {
+    width: 100%;
+    height: 150px; /* Adjusted height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+  }
+
+  .Full_Page {
+    background-color: lightgreen;
+  }
+
+   .Full{
+    background-color: grey;
+    min-height: max-content;
+    height: 100%;
+    margin: 0;
+  } 
